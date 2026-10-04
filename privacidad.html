@@ -20,7 +20,7 @@
 <body>
 
 <h1>Política de privacidad de Viajapp</h1>
-<p class="fecha">Última actualización: 29 de septiembre de 2026</p>
+<p class="fecha">Última actualización: 3 de octubre de 2026</p>
 
 <p>Viajapp es una guía de viajes para iPhone, con una versión web. Esta política explica, en
 castellano y sin vueltas, qué datos toca la app y qué hacemos con ellos. El
@@ -99,6 +99,16 @@ pedida (que es el link entero, con lo de arriba) y la dirección IP y el
 navegador de quien lo abre, para servir la página y protegerla de abusos.
 Nosotros no usamos esos registros para identificar a nadie. Si preferís no
 dejar rastro, no pongas tu nombre ni un mensaje: el link funciona igual.</p>
+<p>Además contamos cuántos links se abren, con
+<a href="https://vercel.com/docs/analytics/privacy-policy">Vercel Web Analytics</a>:
+métricas agregadas, <strong>sin cookies</strong> y sin armar un perfil de nadie.
+Se anota que un link se abrió (de qué tipo es, si traía el código de quien lo
+mandó, por qué puerta llegó, de qué ciudad es y si la persona tocó «Abrir en la
+app» o el botón de bajarla). <strong>No</strong> se anota tu nombre, el mensaje, el
+código ni las paradas, y la dirección que se envía a la medición va sin nada de
+lo que sigue al «?», con el tipo de link y la puerta agregados al final. La
+«puerta» es una etiqueta corta del propio link (por ejemplo, <em>web</em>). Si tu
+navegador manda «no rastrear» o el control global de privacidad, no medimos.</p>
 <p>Si en cambio compartís una imagen (la tarjeta del día o de la ciudad), la
 imagen se arma en tu teléfono y sale sólo por donde la mandes.</p>
 
@@ -114,6 +124,25 @@ cuenta es la misma de la app, con los mismos datos de arriba y la misma forma
 de borrarla. Para entrar, la web carga la biblioteca de Supabase desde
 <a href="https://www.jsdelivr.com/terms/privacy-policy-jsdelivr-net">jsDelivr</a>,
 que, como todo servidor, ve la dirección IP de quien la pide.</p>
+
+<h2>Avisar que un lugar cerró o cambió</h2>
+<p>En la ficha de un lugar hay un botón para avisar que cerró o cambió de precio.
+Si lo tocás, la app manda <strong>cuatro datos</strong> a nuestro servidor
+(<a href="https://supabase.com/privacy">Supabase</a>): la ciudad, el lugar, cuál de
+las dos cosas pasó y un número al azar que la app inventa en tu teléfono. No hay
+campo de texto. El aviso se guarda con esos cuatro datos y la fecha y hora en que
+llegó, y <strong>no incluye tu nombre, tu correo ni tu cuenta</strong>: si habías
+entrado a una, el servidor ve que la petición llega con tu sesión, pero no la
+anota. El número al azar sirve para que cada instalación avise una vez por lugar
+y para frenar abusos; no lo podemos unir a vos, y si borrás la app y la volvés a
+instalar, es otro número.</p>
+<p>Sin conexión, el aviso espera en tu teléfono y sale cuando la haya; si pasan
+30 días sin poder salir, se descarta. Una vez enviado, tu teléfono se queda sólo
+con la lista de lugares de los que ya avisaste, con la fecha de cada aviso (para
+no mandar dos veces ni pasarse del tope de avisos por día), y ese número, hasta
+que borres los datos de la app. Como todo servidor, el de Supabase
+ve la dirección IP de quien se conecta. Los avisos sirven para corregir la guía y
+los lee una persona.</p>
 
 <h2>Tus fotos y documentos</h2>
 <p>Las fotos o documentos que agregás a un viaje se copian dentro de la app, en
