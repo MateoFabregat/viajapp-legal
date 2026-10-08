@@ -34,21 +34,25 @@ borran con ella.</p>
 <p>Si activás el espejo de iCloud, esos datos se copian a <em>tu</em> cuenta de
 iCloud, que es de Apple y tuya. Nosotros seguimos sin verlos.</p>
 
-<h2>La cuenta es opcional</h2>
-<p>Viajapp funciona entera sin cuenta. Si decidís crear una con Iniciar sesión
-con Apple o con Google, guardamos:</p>
+<h2>La cuenta</h2>
+<p>En el iPhone la cuenta es opcional: la app funciona entera sin ella. En la web
+hace falta una cuenta para entrar, porque ahí se guardan los viajes que
+compartís. Si creás una con Iniciar sesión con Apple o con Google, guardamos:</p>
 <ul>
   <li>un identificador de usuario que genera nuestro servidor;</li>
   <li>tu dirección de correo (si usás la de ocultar de Apple, guardamos esa);</li>
   <li>el nombre que Apple o Google nos pasan la primera vez, si lo pasan;</li>
   <li>con qué método entraste y, si entrás con Google, el identificador y la
   foto de perfil que Google nos pasa;</li>
-  <li>si aceptaste o no recibir novedades por correo, y cuándo lo aceptaste;</li>
+  <li>si aceptaste o no recibir novedades por correo (se elige en la web, en
+  Vos), y cuándo lo aceptaste;</li>
   <li>por seguridad de la sesión, la dirección IP y el tipo de navegador o app
   desde los que iniciaste sesión.</li>
 </ul>
-<p>No guardamos contraseñas: quien te identifica es Apple o Google. Tus viajes,
-guardados y notas nunca se suben a la cuenta: siguen en tu teléfono.</p>
+<p>No guardamos contraseñas: quien te identifica es Apple o Google. Los viajes
+que armás en la app, tus guardados y tus notas nunca se suben: siguen en tu
+teléfono. Lo único que se sube son los viajes que compartís desde la web (más
+abajo).</p>
 
 <h3>Entrar con tu correo y un código</h3>
 <p>Si la app o la web te ofrecen entrar con tu correo, te mandamos un código
@@ -73,7 +77,7 @@ tal fecha y con qué método, sin correo ni nombre, que ya no apunta a nadie.</p
 <p>Para mostrarte el pronóstico de una ciudad le pedimos el dato a
 <a href="https://open-meteo.com/">Open-Meteo</a>. Lo que viaja en esa consulta
 es la coordenada de la ciudad que estás mirando, que es un dato nuestro del
-catálogo, no tu ubicación.</p>
+catálogo, no tu ubicación. Como todo servidor, Open-Meteo ve tu dirección IP.</p>
 
 <h2>Tu ubicación</h2>
 <p>Si le das permiso, la app usa tu ubicación para ordenar lugares por cercanía
@@ -120,7 +124,12 @@ Se borran borrando los datos del sitio en el navegador.</p>
 <p>La sesión de tu cuenta se guarda en ese navegador y la cuenta es la misma de la
 app, con los mismos datos de arriba y la misma forma de borrarla. Para entrar, la web carga la biblioteca de Supabase desde
 <a href="https://www.jsdelivr.com/terms/privacy-policy-jsdelivr-net">jsDelivr</a>,
-que, como todo servidor, ve la dirección IP de quien la pide.</p>
+que, como todo servidor, ve la dirección IP de quien la pide. El mapa de cada
+ciudad en la web pide la biblioteca a jsDelivr y los mosaicos a
+<a href="https://openfreemap.org/">OpenFreeMap</a>, que ven tu IP y la zona del
+mapa que estás mirando. La web no usa cookies: usa el almacenamiento local del
+navegador para tu sesión y para los números al azar de «Me sumo» y «Avisame»
+(uno distinto para cada cosa, para que no se puedan unir).</p>
 
 <h2>Compartir un viaje desde la web</h2>
 <p>En la web podés armar un viaje (los destinos, los días de cada uno, la fecha de
@@ -131,9 +140,10 @@ atado a tu cuenta, sólo cuando tocás «Guardar y compartir». Quien abre el li
 el viaje y tu nombre de pila; nunca tu correo. Lo podés cambiar o borrar desde la
 web cuando quieras, y se borra solo si borrás tu cuenta. Los viajes que armás en
 la app del iPhone no se suben.</p>
-<p>Quien abre el link puede tocar «Me sumo» y escribir su nombre: guardamos ese
-nombre, la fecha y un número al azar que inventa su navegador (para que cada
-persona se sume una vez y para frenar abusos). Todos los que tienen el link ven
+<p>Quien abre el link, en el navegador o en la app, puede tocar «Me sumo» y
+escribir su nombre: guardamos ese nombre, la fecha y un número al azar que
+inventa su navegador o su app (en la app, el mismo de «Avisar que un lugar
+cerró»), para que cada persona se sume una vez y para frenar abusos. Todos los que tienen el link ven
 la lista de nombres. «Ya no voy» lo saca, y se borra con el viaje.</p>
 
 <h2>Avisame cuando esté un destino</h2>
@@ -173,21 +183,40 @@ pedido a internet.</p>
   <li>No hay publicidad.</li>
   <li>No hay rastreo entre apps ni sitios, ni identificadores de publicidad.</li>
   <li>No vendemos ni cedemos datos a nadie.</li>
-  <li>No hay analítica de terceros ni SDK de medición.</li>
+  <li>En la app no hay analítica ni SDK de medición. En la web solo contamos,
+  con Vercel, cuántas veces se abren los links, como explicamos arriba.</li>
 </ul>
 
 <h2>Compras</h2>
-<p>Si en algún momento comprás Viajapp completo, la compra la procesa Apple a
+<p>Hoy Viajapp no vende nada. Si en el futuro comprás algo dentro de la app, la
+compra la procesa Apple a
 través del App Store. Nosotros no vemos ni recibimos tus datos de pago en ningún
 momento.</p>
 
 <h2>Borrar tu cuenta y tus datos</h2>
-<p>Desde la app, en Vos → Ajustes → Tu cuenta, podés borrar tu cuenta. Eso elimina de verdad
+<p>Desde la app, en Vos → Ajustes → Tu cuenta, o desde la web, en Vos → Borrar
+mi cuenta, podés borrar tu cuenta. Eso elimina de verdad
 tu perfil, las credenciales asociadas y los viajes que compartiste desde la web
 (con la lista de quienes se sumaron) de nuestros servidores, y revoca el acceso
 en Apple. No queda una copia «por las dudas». Lo que estaba guardado sólo en tu
 teléfono se borra desinstalando la app.</p>
 <p>Si preferís pedirlo por correo, escribinos y lo hacemos nosotros.</p>
+<p>Cuánto se guarda cada cosa: los viajes compartidos y quiénes se sumaron, hasta
+que borres el viaje o tu cuenta; la lista de «Avisame» y los avisos de lugares,
+hasta que ya no sirvan para decidir qué sumar o corregir; los registros técnicos
+de inicio de sesión (IP y navegador), el tiempo que los conserva Supabase por
+seguridad.</p>
+
+<h2>Quién es responsable y tus derechos</h2>
+<p>El responsable de los datos es Mateo Fabregat, desde Uruguay. Los tratamos con
+tu consentimiento, que das al crear la cuenta, compartir un viaje, sumarte o
+anotarte. Podés pedirnos en cualquier momento acceder a tus datos,
+rectificarlos, suprimirlos u oponerte a que los usemos, escribiendo a
+<a href="mailto:mateofviajes@gmail.com">mateofviajes@gmail.com</a>. Si no te
+respondemos, podés reclamar ante la Unidad Reguladora y de Control de Datos
+Personales (URCDP) de Uruguay.</p>
+<p>Los datos viven en servidores fuera de Uruguay: Supabase (en Brasil), Vercel y
+jsDelivr (Estados Unidos y su red), y Apple o Google cuando entrás con ellos.</p>
 
 <h2>Otras condiciones</h2>
 <p>Las condiciones de uso de Viajapp están en
