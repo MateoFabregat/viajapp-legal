@@ -213,10 +213,8 @@ las ciudades de la guía. Los eventos llevan un número al azar que la app inven
 al instalarse, que <strong>no está atado a tu cuenta</strong> y que no unimos con
 ella ni con datos de fuera de Viajapp. No se usa la dirección IP para ubicarte.</p>
 <p>Los recibe <a href="https://posthog.com/privacy">PostHog</a>, en sus servidores
-de la Unión Europea. Sirven solo para decidir qué mejorar. Si no querés que se
-cuente tu uso, escribinos y lo apagamos para tu instalación.</p>
-<p><em>Finalidad y base:</em> mejorar el servicio (interés legítimo), con datos que
-no te identifican.</p>
+de la Unión Europea. Sirven solo para decidir qué mejorar. La medición de uso es opcional: no inicializamos PostHog antes de que aceptes en Ajustes, junto a «Privacidad», el control «Compartir datos de uso». Podés rechazar y seguir usando la app. Si lo apagás en ese mismo control, dejan de capturarse nuevos eventos; la decisión se guarda en este teléfono y no se cruza con tu cuenta. Retirar el consentimiento no borra automáticamente los datos ya recibidos.</p>
+<p><em>Finalidad y base:</em> mejorar el servicio, con tu consentimiento.</p>
 
 <h3>3.9. Cuando la app falla</h3>
 <p>Si la app se cierra por un error, puede mandar un informe técnico: qué falló y
@@ -239,7 +237,7 @@ contacto. Como todo servidor, MET Norway ve tu dirección IP.</p>
 <p><strong>La versión web.</strong> Tus guardados, los países marcados y el viaje
 que estás armando sin compartir se guardan en el almacenamiento local de tu
 navegador; no los recibimos. La sesión de tu cuenta también se guarda ahí. La web
-<strong>no usa cookies</strong>.</p>
+no carga Google Analytics en las páginas de cuenta ni en los links personales. Las cookies de medición de las páginas públicas se usan solo tras aceptar, como se explica abajo.</p>
 <p><strong>Los links abiertos en el navegador.</strong> El sitio está alojado en
 <a href="https://vercel.com/legal/privacy-policy">Vercel</a>, que, como cualquier
 servidor web, registra por un tiempo corto la dirección pedida (el link entero),
@@ -257,7 +255,10 @@ control global de privacidad, no medimos.</p>
 <a href="https://www.jsdelivr.com/terms/privacy-policy-jsdelivr-net">jsDelivr</a> y
 los mapas desde <a href="https://openfreemap.org/">OpenFreeMap</a>, que ven tu IP y,
 en el caso de los mapas, la zona que estás mirando. Las guías públicas se pueden
-leer sin cuenta y no tienen medición propia.</p>
+leer sin cuenta.</p>
+<p><strong>Medición de las páginas públicas.</strong> La portada, las guías, la metodología y la página para organizar un viaje pueden usar Google Analytics 4 únicamente si aceptás el aviso de medición. Antes de aceptar no cargamos su etiqueta. Podés rechazar sin perder acceso al contenido y cambiar tu decisión desde «Preferencias de medición». Si tu navegador envía Do Not Track o Global Privacy Control, no iniciamos esta medición.</p>
+<p>Medimos vistas y clics de botones con la dirección pública canónica, sin parámetros ni fragmentos, y una categoría de origen como Google, ChatGPT o YouTube. No enviamos el contenido de viajes, notas, formularios, cuentas ni links personales. Google recibe información técnica de conexión, como dirección IP, navegador y dispositivo, y puede derivar ubicación aproximada. Tras aceptar, puede guardar cookies analíticas para distinguir visitas y sesiones. No activamos publicidad, Google Signals ni personalización de anuncios. La preferencia de aceptar o rechazar se conserva localmente en el navegador. Retirar el permiso detiene nuestros nuevos eventos; no borra automáticamente datos ya recibidos por Google.</p>
+<p><em>Finalidad y base:</em> entender la adquisición y mejorar las páginas públicas, con tu consentimiento. Google trata los datos según su <a href="https://policies.google.com/privacy">política de privacidad</a>; puede procesarlos fuera de tu país. Google Analytics no se carga en <code>/app</code>, páginas de cuenta ni links personales. Un clic no se considera por sí solo un registro, una compra o un lead confirmado.</p>
 
 <h2 id="tabla">4. Resumen por finalidad</h2>
 <div class="tabla">
@@ -286,7 +287,7 @@ servicio y según sus propias políticas:</p>
   de los viajes compartidos (servidores en São Paulo, Brasil).</li>
   <li><a href="https://www.apple.com/legal/privacy/">Apple</a>: inicio de sesión, compras,
   iCloud (si lo activás).</li>
-  <li><a href="https://policies.google.com/privacy">Google</a>: inicio de sesión, si lo elegís.</li>
+  <li><a href="https://policies.google.com/privacy">Google</a>: inicio de sesión si lo elegís, y Google Analytics 4 en páginas públicas solo tras aceptar la medición.</li>
   <li><a href="https://posthog.com/privacy">PostHog</a>: medición anónima de uso de la
   app (Unión Europea).</li>
   <li><a href="https://sentry.io/privacy/">Sentry</a>: informes de fallos (Estados Unidos).</li>
