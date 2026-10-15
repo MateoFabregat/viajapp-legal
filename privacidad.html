@@ -4,247 +4,373 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Política de privacidad · Viajapp</title>
+<meta name="description" content="Qué datos trata Viajapp, para qué, con quién y cómo ejercer tus derechos.">
+<link rel="canonical" href="https://getviajapp.app/privacidad">
 <style>
-  :root { color-scheme: light dark; }
-  body { max-width: 42rem; margin: 0 auto; padding: 2.5rem 1.25rem 6rem;
+  :root { color-scheme: light dark; --tinta: #1d1b17; --suave: #6b665c; --linea: #e4e0d6; --acento: #d1451f; --papel: #fbfaf6; }
+  @media (prefers-color-scheme: dark) { :root { --tinta: #efece4; --suave: #a8a297; --linea: #34312b; --papel: #161512; } }
+  body { max-width: 44rem; margin: 0 auto; padding: 2.5rem 1.25rem 6rem; background: var(--papel); color: var(--tinta);
          font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; }
-  h1 { font-size: 1.9rem; line-height: 1.2; margin-bottom: .25rem; }
-  h2 { font-size: 1.15rem; margin-top: 2.5rem; }
-  .fecha { opacity: .6; font-size: .95rem; margin-top: 0; }
+  h1 { font-size: 2rem; line-height: 1.2; margin-bottom: .25rem; }
+  h2 { font-size: 1.2rem; margin-top: 2.75rem; padding-top: 1rem; border-top: 1px solid var(--linea); }
+  h3 { font-size: 1.02rem; margin-top: 1.75rem; }
+  .fecha { color: var(--suave); font-size: .95rem; margin-top: 0; }
+  .resumen { border: 1px solid var(--linea); border-radius: 12px; padding: .5rem 1.25rem; margin: 1.5rem 0; }
+  nav ol { padding-left: 1.4rem; columns: 2; column-gap: 2rem; font-size: .95rem; }
+  @media (max-width: 34rem) { nav ol { columns: 1; } }
   ul { padding-left: 1.2rem; }
-  li { margin: .4rem 0; }
-  a { color: #d1451f; }
-  footer { margin-top: 4rem; font-size: .9rem; opacity: .7; }
+  li { margin: .35rem 0; }
+  table { width: 100%; border-collapse: collapse; font-size: .92rem; margin: 1rem 0; }
+  th, td { text-align: left; vertical-align: top; padding: .5rem .5rem .5rem 0; border-bottom: 1px solid var(--linea); }
+  th { font-weight: 600; }
+  .tabla { overflow-x: auto; }
+  a { color: var(--acento); }
+  footer { margin-top: 4rem; font-size: .9rem; color: var(--suave); }
 </style>
 </head>
 <body>
 
-<h1>Política de privacidad de Viajapp</h1>
-<p class="fecha">Última actualización: 15 de octubre de 2026</p>
+<!--
+  15/10/2026: reescrita entera, en forma profesional. Se publica en
+  https://getviajapp.app/privacidad/ (web/privacidad/index.html es copia de este
+  archivo: `cp legal/privacidad.html web/privacidad/index.html`) y en el GitHub
+  Pages viejo (mateofabregat/viajapp-legal), que sigue vivo para los links ya
+  repartidos. Suma: la compra vitalicia y la analítica de uso (PostHog UE,
+  ticket 172). La etiqueta "App Privacy" de App Store Connect tiene que decir
+  lo mismo que la sección 4.
+-->
 
-<p>Viajapp es una guía de viajes para iPhone, con una versión web. Esta política explica, en
-castellano y sin vueltas, qué datos toca la app y qué hacemos con ellos. El
-resumen es corto: <strong>casi todo se queda en tu teléfono</strong>.</p>
+<h1>Política de privacidad</h1>
+<p class="fecha">Viajapp · Vigente desde el 15 de octubre de 2026</p>
 
-<h2>Lo que la app guarda en tu teléfono y no sale de ahí</h2>
-<p>Tus lugares guardados, los viajes que armás, las ciudades que marcás como
-visitadas, tus intereses y tus ajustes viven en el almacenamiento del teléfono.
-No los recibimos, no los vemos y no los podemos recuperar. Si borrás la app, se
-borran con ella.</p>
-<p>Si activás el espejo de iCloud, esos datos se copian a <em>tu</em> cuenta de
-iCloud, que es de Apple y tuya. Nosotros seguimos sin verlos.</p>
+<div class="resumen">
+<p><strong>En pocas palabras.</strong> Para usar Viajapp necesitás una cuenta, que
+guarda una copia de lo que armás para que lo tengas en cualquier dispositivo.
+Tu ubicación, tus papeles y tus fotos no salen de tu teléfono. Medimos de forma
+anónima cómo se usa la app para mejorarla. No vendemos datos, no mostramos
+publicidad y no te rastreamos entre apps ni sitios.</p>
+</div>
 
-<h2>La cuenta</h2>
-<p>En el iPhone la cuenta es opcional: la app funciona entera sin ella. En la web
-hace falta una cuenta para entrar, porque ahí se guardan los viajes que
-compartís. Si creás una con Iniciar sesión con Apple o con Google, guardamos:</p>
+<nav aria-label="Contenido">
+<ol>
+  <li><a href="#responsable">Quién es responsable</a></li>
+  <li><a href="#alcance">A qué se aplica</a></li>
+  <li><a href="#datos">Qué datos tratamos</a></li>
+  <li><a href="#tabla">Resumen por finalidad</a></li>
+  <li><a href="#proveedores">Proveedores</a></li>
+  <li><a href="#transferencias">Transferencias internacionales</a></li>
+  <li><a href="#conservacion">Cuánto tiempo guardamos</a></li>
+  <li><a href="#seguridad">Seguridad</a></li>
+  <li><a href="#derechos">Tus derechos</a></li>
+  <li><a href="#borrar">Borrar tu cuenta</a></li>
+  <li><a href="#no">Lo que no hacemos</a></li>
+  <li><a href="#menores">Menores</a></li>
+  <li><a href="#cambios">Cambios</a></li>
+  <li><a href="#contacto">Contacto</a></li>
+</ol>
+</nav>
+
+<h2 id="responsable">1. Quién es responsable</h2>
+<p>El responsable del tratamiento de tus datos es <strong>Mateo Fabregat</strong>,
+desarrollador de Viajapp, con domicilio en Uruguay. Para cualquier consulta sobre
+privacidad, escribinos a
+<a href="mailto:mateofviajes@gmail.com">mateofviajes@gmail.com</a>.</p>
+<p>Tratamos los datos conforme a la Ley N.º 18.331 de Protección de Datos
+Personales de Uruguay y, cuando corresponde, al Reglamento General de Protección
+de Datos de la Unión Europea (RGPD) y a otras normas aplicables donde está
+disponible la app.</p>
+
+<h2 id="alcance">2. A qué se aplica</h2>
+<p>Esta política se aplica a la app Viajapp para iPhone, a la versión web
+(<a href="https://getviajapp.app">getviajapp.app</a>), a los links que se comparten
+desde ellas y a las guías públicas. Las condiciones de uso están en
+<a href="https://getviajapp.app/terminos">getviajapp.app/terminos</a>.</p>
+
+<h2 id="datos">3. Qué datos tratamos</h2>
+
+<h3>3.1. La cuenta</h3>
+<p>Para usar Viajapp, en el iPhone y en la web, hace falta una cuenta. Podés
+crearla con Iniciar sesión con Apple, con Google o con tu correo y un código de
+un solo uso. Guardamos:</p>
 <ul>
   <li>un identificador de usuario que genera nuestro servidor;</li>
-  <li>tu dirección de correo (si usás la de ocultar de Apple, guardamos esa);</li>
+  <li>tu dirección de correo (si usás «Ocultar mi correo» de Apple, guardamos esa);</li>
   <li>el nombre que Apple o Google nos pasan la primera vez, si lo pasan;</li>
-  <li>con qué método entraste y, si entrás con Google, el identificador y la
-  foto de perfil que Google nos pasa;</li>
-  <li>si aceptaste o no recibir novedades por correo (se elige en la web, en
-  Vos), y cuándo lo aceptaste;</li>
+  <li>con qué método entraste y, si entrás con Google, el identificador y la foto
+  de perfil que Google nos pasa;</li>
+  <li>si aceptaste recibir novedades por correo, y cuándo;</li>
   <li>por seguridad de la sesión, la dirección IP y el tipo de navegador o app
   desde los que iniciaste sesión.</li>
 </ul>
-<p>No guardamos contraseñas: quien te identifica es Apple o Google. Los viajes
-que armás en la app, tus guardados y tus notas nunca se suben: siguen en tu
-teléfono. Lo único que se sube son los viajes que compartís desde la web (más
-abajo).</p>
+<p>No guardamos contraseñas: quien confirma tu identidad es Apple, Google o el
+código que te mandamos al correo. El código vence a los pocos minutos y no se
+guarda después de usarlo. El correo no se usa para nada más que la cuenta, salvo
+que hayas aceptado recibir novedades.</p>
+<p><em>Finalidad y base:</em> prestarte el servicio que pediste al crear la cuenta
+(ejecución del contrato) y proteger la cuenta (interés legítimo).</p>
 
-<h3>Entrar con tu correo y un código</h3>
-<p>Si la app o la web te ofrecen entrar con tu correo, te mandamos un código
-de un solo uso a esa dirección. Para eso guardamos el correo (lo mismo que con
-Apple o Google) y nuestro proveedor de la cuenta, Supabase, envía el mensaje.
-El código vence a los pocos minutos y no lo guardamos después de usarlo. No
-usamos ese correo para nada más que la cuenta, salvo que hayas aceptado recibir
-novedades.</p>
+<h3>3.2. La copia de lo que armás</h3>
+<p>Tu cuenta guarda una copia de lo que armás en la app: tus viajes (ciudades,
+días, fechas y el plan de cada día), tus lugares guardados y sus listas, las
+ciudades, lugares y países que marcás como visitados, tus notas, tus gastos, tu
+lista de pendientes, quién te recomendó cada lugar, tu tipo de viaje y el tema
+de la app. La app la actualiza sola: al abrirla, al volver a ella y unos
+segundos después de cada cambio.</p>
+<p>Sirve para una sola cosa: que entres con tu cuenta en otro dispositivo y esté
+todo. Solo tu cuenta la puede leer; no la miramos ni se la pasamos a nadie.</p>
+<p>Si activás el espejo de iCloud, además se copia a <em>tu</em> cuenta de iCloud,
+que es de Apple y tuya. Ahí nosotros no tenemos acceso.</p>
+<p><em>Finalidad y base:</em> prestarte el servicio (ejecución del contrato).</p>
 
-<h3>Quién guarda esos datos</h3>
-<p>La cuenta vive en <a href="https://supabase.com/privacy">Supabase</a>, que
-nos presta la base de datos, con servidores en São Paulo, Brasil. Apple y
-Google sólo confirman quién sos cuando iniciás sesión. Ninguno de ellos usa
-estos datos para otra cosa que prestarnos ese servicio.</p>
-
-<h3>Cuánto tiempo</h3>
-<p>Mientras tengas la cuenta. Cuando la borrás, se borra todo lo de arriba. Lo
-único que queda es un registro de que <em>una</em> cuenta se creó o se borró en
-tal fecha y con qué método, sin correo ni nombre, que ya no apunta a nadie.</p>
-
-<h2>El clima</h2>
-<p>Para mostrarte el pronóstico de una ciudad le pedimos el dato a
-<a href="https://open-meteo.com/">Open-Meteo</a>. Lo que viaja en esa consulta
-es la coordenada de la ciudad que estás mirando, que es un dato nuestro del
-catálogo, no tu ubicación. Como todo servidor, Open-Meteo ve tu dirección IP.</p>
-
-<h2>Tu ubicación</h2>
-<p>Si le das permiso, la app usa tu ubicación para ordenar lugares por cercanía
-y mostrarte qué tenés cerca. Ese cálculo pasa entero dentro del teléfono: tu
-ubicación no se envía a nuestros servidores ni a terceros. Podés negar el
-permiso y la app sigue funcionando.</p>
-<p>Si prendés el aviso de llegada, la app le pide al iPhone que le avise cuando
-llegás a una ciudad de tu viaje. Para eso necesita el permiso de ubicación
-«Siempre». Ese aviso también lo resuelve el propio teléfono: tampoco sale de
-ahí.</p>
-
-<h2>Cuando mandás un viaje</h2>
-<p>Si compartís un viaje o una ciudad, la app arma un link. Todo lo que el link
-lleva va escrito <strong>dentro del link</strong>: las ciudades, las paradas
-elegidas, los días de cada una, las fechas si el viaje las tiene, el mensaje que
-escribas y el nombre que pongas (los dos son opcionales). No lo subimos a ningún
-servidor ni lo guardamos: lo mandás vos, por la app que elijas (WhatsApp,
-Mensajes, correo…), y lo lee quien lo recibe.</p>
-<p>Si quien lo recibe lo abre en el navegador, el pedido llega a la página web
-de Viajapp, alojada en <a href="https://vercel.com/legal/privacy-policy">Vercel</a>.
-Como cualquier sitio web, Vercel registra por un tiempo corto la dirección
-pedida (que es el link entero, con lo de arriba) y la dirección IP y el
-navegador de quien lo abre, para servir la página y protegerla de abusos.
-Nosotros no usamos esos registros para identificar a nadie. Si preferís no
-dejar rastro, no pongas tu nombre ni un mensaje: el link funciona igual.</p>
-<p>Además contamos cuántos links se abren, con
-<a href="https://vercel.com/docs/analytics/privacy-policy">Vercel Web Analytics</a>:
-métricas agregadas, <strong>sin cookies</strong> y sin armar un perfil de nadie.
-Se anota que un link se abrió (de qué tipo es, si traía el código de quien lo
-mandó, por qué puerta llegó, de qué ciudad es y si la persona tocó «Abrir en la
-app» o el botón de bajarla). <strong>No</strong> se anota tu nombre, el mensaje, el
-código ni las paradas, y la dirección que se envía a la medición va sin nada de
-lo que sigue al «?», con el tipo de link y la puerta agregados al final. La
-«puerta» es una etiqueta corta del propio link (por ejemplo, <em>web</em>). Si tu
-navegador manda «no rastrear» o el control global de privacidad, no medimos.</p>
-<p>Si en cambio compartís una imagen (la tarjeta del día o de la ciudad), la
-imagen se arma en tu teléfono y sale sólo por donde la mandes.</p>
-
-<h2>La versión web</h2>
-<p>Viajapp también se puede usar en el navegador, entrando con tu cuenta. Tus
-guardados, los países marcados y el viaje que estás armando sin compartir se
-guardan en el almacenamiento local de <em>ese navegador</em>. No los recibimos.
-Se borran borrando los datos del sitio en el navegador.</p>
-<p>La sesión de tu cuenta se guarda en ese navegador y la cuenta es la misma de la
-app, con los mismos datos de arriba y la misma forma de borrarla. Para entrar, la web carga la biblioteca de Supabase desde
-<a href="https://www.jsdelivr.com/terms/privacy-policy-jsdelivr-net">jsDelivr</a>,
-que, como todo servidor, ve la dirección IP de quien la pide. El mapa de cada
-ciudad en la web pide la biblioteca a jsDelivr y los mosaicos a
-<a href="https://openfreemap.org/">OpenFreeMap</a>, que ven tu IP y la zona del
-mapa que estás mirando. La web no usa cookies: usa el almacenamiento local del
-navegador para tu sesión y para los números al azar de «Me sumo» y «Avisame»
-(uno distinto para cada cosa, para que no se puedan unir).</p>
-
-<h2>Las páginas públicas</h2>
-<p>La portada, el índice de guías y las guías públicas se pueden leer sin crear
-una cuenta. La nueva medición de adquisición de esas páginas está
-<strong>desactivada</strong>: ese módulo no envía visitas ni acciones de los
-botones al proveedor de analítica.</p>
-<p>Antes de activarla publicaremos aquí qué datos se envían y para qué. La
-medición de aperturas de enlaces compartidos descrita más arriba conserva su
-alcance independiente.</p>
-
-<h2>Compartir un viaje desde la web</h2>
-<p>En la web podés armar un viaje (los destinos, los días de cada uno, la fecha de
-salida si querés y lo que escribas para cada día) y compartirlo con un link.
-Para que el link funcione aunque tus amigos no tengan la app, <strong>ese viaje se
-guarda en nuestro servidor</strong> (<a href="https://supabase.com/privacy">Supabase</a>),
-atado a tu cuenta, sólo cuando tocás «Guardar y compartir». Quien abre el link ve
-el viaje y tu nombre de pila; nunca tu correo. Lo podés cambiar o borrar desde la
-web cuando quieras, y se borra solo si borrás tu cuenta. Los viajes que armás en
-la app del iPhone no se suben.</p>
-<p>Quien abre el link, en el navegador o en la app, puede tocar «Me sumo» y
-escribir su nombre: guardamos ese nombre, la fecha y un número al azar que
-inventa su navegador o su app (en la app, el mismo de «Avisar que un lugar
-cerró»), para que cada persona se sume una vez y para frenar abusos. Todos los que tienen el link ven
-la lista de nombres. «Ya no voy» lo saca, y se borra con el viaje.</p>
-
-<h2>Avisame cuando esté un destino</h2>
-<p>Algunos destinos todavía no tienen guía. Si tocás «Avisame», guardamos el
-destino, la fecha y un número al azar de tu navegador; no tu nombre, ni tu correo,
-ni tu cuenta. Sirve para saber qué destinos sumar primero, y mostramos sólo
-cuántas personas esperan cada uno.</p>
-
-<h2>Avisar que un lugar cerró o cambió</h2>
-<p>En la ficha de un lugar hay un botón para avisar que cerró o cambió de precio.
-Si lo tocás, la app manda <strong>cuatro datos</strong> a nuestro servidor
-(<a href="https://supabase.com/privacy">Supabase</a>): la ciudad, el lugar, cuál de
-las dos cosas pasó y un número al azar que la app inventa en tu teléfono. No hay
-campo de texto. El aviso se guarda con esos cuatro datos y la fecha y hora en que
-llegó, y <strong>no incluye tu nombre, tu correo ni tu cuenta</strong>: si habías
-entrado a una, el servidor ve que la petición llega con tu sesión, pero no la
-anota. El número al azar sirve para que cada instalación avise una vez por lugar
-y para frenar abusos; no lo podemos unir a vos, y si borrás la app y la volvés a
-instalar, es otro número.</p>
-<p>Sin conexión, el aviso espera en tu teléfono y sale cuando la haya; si pasan
-30 días sin poder salir, se descarta. Una vez enviado, tu teléfono se queda sólo
-con la lista de lugares de los que ya avisaste, con la fecha de cada aviso (para
-no mandar dos veces ni pasarse del tope de avisos por día), y ese número, hasta
-que borres los datos de la app. Como todo servidor, el de Supabase
-ve la dirección IP de quien se conecta. Los avisos sirven para corregir la guía y
-los lee una persona.</p>
-
-<h2>Tus fotos y documentos</h2>
-<p>Las fotos o documentos que agregás a un viaje se copian dentro de la app, en
-tu teléfono. No los subimos a ningún lado. Para elegir una foto usamos el
-selector de iOS: la app ve sólo la foto que elegís, no tu fototeca.</p>
-<p>Las fotos de las ciudades vienen dentro de la app: mirarlas no hace ningún
-pedido a internet.</p>
-
-<h2>Lo que no hacemos</h2>
+<h3>3.3. Lo que se queda en tu teléfono</h3>
+<p>Estos datos <strong>no salen de tu dispositivo</strong>: no los recibimos, no los
+vemos y no los podemos recuperar.</p>
 <ul>
-  <li>No hay publicidad.</li>
-  <li>No hay rastreo entre apps ni sitios, ni identificadores de publicidad.</li>
-  <li>No vendemos ni cedemos datos a nadie.</li>
-  <li>En la app no hay analítica ni SDK de medición. En la web solo contamos,
-  con Vercel, cuántas veces se abren los links, como explicamos arriba.</li>
+  <li><strong>Tu ubicación.</strong> Si das permiso, la app la usa para ordenar
+  lugares por cercanía y calcular a cuántos minutos a pie estás. Con el permiso
+  «Siempre», el propio iPhone avisa a la app cuando llegás a una ciudad de tu
+  viaje. Todo ese cálculo ocurre en el teléfono. Podés negar el permiso y la app
+  sigue funcionando.</li>
+  <li><strong>Tus papeles y fotos.</strong> Los pasajes, reservas, fotos y PDF que
+  agregás a un viaje se copian dentro de la app. Para elegir una foto usamos el
+  selector de iOS: la app ve solo la foto que elegís, no tu fototeca.</li>
+  <li><strong>Movimiento.</strong> Si lo permitís, se usa para afinar la ubicación
+  mientras caminás. No se registra ni se guarda tu actividad física.</li>
+  <li>Tus intereses y tus ajustes.</li>
+</ul>
+<p>Si borrás la app, se borran con ella.</p>
+
+<h3>3.4. Compartir un viaje</h3>
+<p><strong>Con un link simple.</strong> Si compartís un viaje o una ciudad, la app
+arma un link que lleva todo escrito adentro: las ciudades, las paradas, los días,
+las fechas si las hay, y el mensaje y el nombre que pongas (ambos opcionales).
+No lo guardamos en ningún servidor: lo mandás vos por la app que elijas. Si
+compartís una imagen (la tarjeta del día o de la ciudad), se arma en tu teléfono
+y sale solo por donde la mandes.</p>
+<p><strong>Con un link de invitación.</strong> Desde la web, o desde «Invitar a
+alguien» en la app, el viaje (ciudades, días de cada una, título de cada día y
+fecha de salida) <strong>se guarda en nuestro servidor</strong>, atado a tu cuenta,
+para que el link funcione aunque tus amigos no tengan la app. No se suben tus
+notas, gastos, papeles ni guardados. Quien abre el link ve el viaje y tu nombre
+de pila, nunca tu correo. Podés cambiarlo o borrarlo cuando quieras.</p>
+<p><strong>Quienes se suman.</strong> Quien abre una invitación puede tocar «Me
+sumo», escribir su nombre y, si quiere, una frase para el grupo (hasta 100
+caracteres). Guardamos ese nombre, la frase, la fecha y un número al azar del
+navegador o de la app (o la cuenta, si se suma desde la app con sesión), para
+que cada persona se sume una vez y para frenar abusos. Todos los que tienen el
+link ven la lista de nombres y frases. «Ya no voy» borra el nombre, la frase y
+los votos de esa persona; quien armó el viaje puede sacar a alguien con el mismo
+efecto.</p>
+<p><strong>El mazo del grupo.</strong> Quienes van al viaje pueden decir sí o no a
+lugares. Guardamos cada respuesta (el lugar, sí o no y cuándo) atada al viaje y a
+quien la dio. Los demás ven solo cuántos eligieron cada lugar, nunca quién dijo
+qué.</p>
+<p><em>Finalidad y base:</em> la función que pediste al compartir (ejecución del
+contrato y tu consentimiento al sumarte).</p>
+
+<h3>3.5. Avisar que un lugar cerró o cambió</h3>
+<p>En la ficha de un lugar hay un botón para avisar que cerró o cambió de precio.
+Si lo tocás, la app manda <strong>cuatro datos</strong> a nuestro servidor: la ciudad,
+el lugar, cuál de las dos cosas pasó y un número al azar que la app inventa en tu
+teléfono. No hay campo de texto. El aviso se guarda con esos cuatro datos y la
+fecha y hora en que llegó, y <strong>no incluye tu nombre, tu correo ni tu
+cuenta</strong>. El número al azar sirve para que cada instalación avise una vez
+por lugar y para frenar abusos; si reinstalás la app, es otro número.</p>
+<p>Sin conexión, el aviso espera en tu teléfono hasta 30 días. Una vez enviado, tu
+teléfono se queda con la lista de lugares de los que ya avisaste, con la fecha de
+cada aviso, para no mandar dos veces. Los avisos los lee una persona para
+corregir la guía.</p>
+
+<h3>3.6. «Avisame» y los destinos que vienen</h3>
+<p>Si tocás «Avisame» en un destino que todavía no tiene guía, o votás qué
+destino escribir después, guardamos el destino, la fecha y un número al azar;
+no tu nombre, tu correo ni tu cuenta. Sirve para decidir qué destinos sumar
+primero; solo mostramos cuántas personas esperan cada uno.</p>
+
+<h3>3.7. Compras</h3>
+<p>Viajapp ofrece una <strong>compra única («vitalicia»)</strong> que desbloquea
+todo el contenido. La compra la procesa Apple a través del App Store: nosotros
+<strong>no vemos ni recibimos tus datos de pago</strong>. Para confirmar que la
+compra es válida, la app puede consultar a Apple, a través de nuestro servidor,
+la transacción firmada que Apple le entregó; esa consulta no se guarda. El
+estado de la compra queda en tu dispositivo y en tu cuenta de Apple, y se
+recupera con «Restaurar compra».</p>
+<p>Para entender cómo funciona la pantalla de compra, contamos de forma anónima
+cuándo se abre y cómo termina una compra (ver 3.8). Los reembolsos los gestiona
+Apple en <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
+
+<h3>3.8. Cómo se usa la app</h3>
+<p>Para saber qué partes de la app sirven y cuáles nadie encuentra, la app cuenta
+algunas cosas que pasan adentro: qué pantallas se abren, cuándo se crea un viaje,
+cuándo se comparte o se abre un link de Viajapp, cuándo se ve la pantalla de
+compra y cómo terminó una compra, y si estás en medio de un viaje. Junto con eso
+van la versión de la app, el modelo y la versión de iOS, y la región y el idioma
+de los ajustes de tu teléfono.</p>
+<p><strong>No van</strong> tu nombre, tu correo, tu cuenta, tu ubicación ni nada de
+lo que escribís: ni los nombres de tus viajes, ni notas, gastos o papeles, ni el
+link con el que abriste la app. De una ciudad solo se dice cuál es si es una de
+las ciudades de la guía. Los eventos llevan un número al azar que la app inventa
+al instalarse, que <strong>no está atado a tu cuenta</strong> y que no unimos con
+ella ni con datos de fuera de Viajapp. No se usa la dirección IP para ubicarte.</p>
+<p>Los recibe <a href="https://posthog.com/privacy">PostHog</a>, en sus servidores
+de la Unión Europea. Sirven solo para decidir qué mejorar. Si no querés que se
+cuente tu uso, escribinos y lo apagamos para tu instalación.</p>
+<p><em>Finalidad y base:</em> mejorar el servicio (interés legítimo), con datos que
+no te identifican.</p>
+
+<h3>3.9. Cuando la app falla</h3>
+<p>Si la app se cierra por un error, puede mandar un informe técnico: qué falló y
+dónde del código, la versión de la app, el modelo de iPhone y la versión de iOS.
+No lleva tu nombre, correo, cuenta ni dirección IP, ni nada de lo que armás;
+antes de salir del teléfono se le quitan las direcciones web y cualquier cosa con
+forma de correo. Lleva un número al azar de la instalación para agrupar fallos
+repetidos. Los recibe <a href="https://sentry.io/privacy/">Sentry</a> y se guardan
+unos 90 días.</p>
+<p><em>Finalidad y base:</em> arreglar errores (interés legítimo).</p>
+
+<h3>3.10. El clima</h3>
+<p>Para mostrar el pronóstico le pedimos el dato a
+<a href="https://api.met.no/">MET Norway</a>, el instituto meteorológico de Noruega.
+La consulta lleva la coordenada de la ciudad que estás mirando (un dato de
+nuestro catálogo, no tu ubicación) y el nombre de la app con nuestro correo de
+contacto. Como todo servidor, MET Norway ve tu dirección IP.</p>
+
+<h3>3.11. La web y los links</h3>
+<p><strong>La versión web.</strong> Tus guardados, los países marcados y el viaje
+que estás armando sin compartir se guardan en el almacenamiento local de tu
+navegador; no los recibimos. La sesión de tu cuenta también se guarda ahí. La web
+<strong>no usa cookies</strong>.</p>
+<p><strong>Los links abiertos en el navegador.</strong> El sitio está alojado en
+<a href="https://vercel.com/legal/privacy-policy">Vercel</a>, que, como cualquier
+servidor web, registra por un tiempo corto la dirección pedida (el link entero),
+la IP y el navegador, para servir la página y protegerla de abusos. No usamos esos
+registros para identificar a nadie. Si preferís no dejar rastro, no pongas tu
+nombre ni un mensaje en el link.</p>
+<p><strong>Cuántos links se abren.</strong> Con
+<a href="https://vercel.com/docs/analytics/privacy-policy">Vercel Web Analytics</a>
+contamos, sin cookies y sin armar perfiles, que un link se abrió: de qué tipo es,
+si traía el código de quien lo mandó, por qué puerta llegó, de qué ciudad es y si
+se tocó «Abrir en la app» o el botón de bajarla. No se anota tu nombre, el
+mensaje, el código ni las paradas. Si tu navegador manda «no rastrear» o el
+control global de privacidad, no medimos.</p>
+<p><strong>Recursos de terceros.</strong> La web carga bibliotecas desde
+<a href="https://www.jsdelivr.com/terms/privacy-policy-jsdelivr-net">jsDelivr</a> y
+los mapas desde <a href="https://openfreemap.org/">OpenFreeMap</a>, que ven tu IP y,
+en el caso de los mapas, la zona que estás mirando. Las guías públicas se pueden
+leer sin cuenta y no tienen medición propia.</p>
+
+<h2 id="tabla">4. Resumen por finalidad</h2>
+<div class="tabla">
+<table>
+  <thead><tr><th>Dato</th><th>Para qué</th><th>¿Atado a vos?</th></tr></thead>
+  <tbody>
+    <tr><td>Correo, nombre, id de usuario</td><td>Tu cuenta</td><td>Sí</td></tr>
+    <tr><td>Viajes, guardados, notas, gastos, pendientes</td><td>La copia en tu cuenta</td><td>Sí</td></tr>
+    <tr><td>Viajes compartidos con invitación, nombres y votos de quienes se suman</td><td>Viajar en grupo</td><td>Sí</td></tr>
+    <tr><td>Avisos de lugares, «Avisame», votos de destinos</td><td>Corregir y ampliar la guía</td><td>No (número al azar)</td></tr>
+    <tr><td>Uso de la app (pantallas y acciones)</td><td>Mejorar la app</td><td>No (número al azar)</td></tr>
+    <tr><td>Informes de fallos</td><td>Arreglar errores</td><td>No (número al azar)</td></tr>
+    <tr><td>Ubicación, papeles, fotos, movimiento</td><td>Funciones en el teléfono</td><td>No salen del teléfono</td></tr>
+    <tr><td>Datos de pago</td><td>—</td><td>Los trata solo Apple</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Ningún dato se usa para publicidad ni para rastrearte entre apps o sitios de
+otras empresas.</p>
+
+<h2 id="proveedores">5. Proveedores</h2>
+<p>Trabajamos con estos proveedores, que tratan datos solo para prestarnos su
+servicio y según sus propias políticas:</p>
+<ul>
+  <li><a href="https://supabase.com/privacy">Supabase</a>: base de datos de la cuenta y
+  de los viajes compartidos (servidores en São Paulo, Brasil).</li>
+  <li><a href="https://www.apple.com/legal/privacy/">Apple</a>: inicio de sesión, compras,
+  iCloud (si lo activás).</li>
+  <li><a href="https://policies.google.com/privacy">Google</a>: inicio de sesión, si lo elegís.</li>
+  <li><a href="https://posthog.com/privacy">PostHog</a>: medición anónima de uso de la
+  app (Unión Europea).</li>
+  <li><a href="https://sentry.io/privacy/">Sentry</a>: informes de fallos (Estados Unidos).</li>
+  <li><a href="https://vercel.com/legal/privacy-policy">Vercel</a>: alojamiento de la web
+  y conteo de links abiertos.</li>
+  <li><a href="https://api.met.no/">MET Norway</a>, jsDelivr y OpenFreeMap: clima,
+  bibliotecas y mapas.</li>
+</ul>
+<p>No vendemos ni cedemos datos a nadie más.</p>
+
+<h2 id="transferencias">6. Transferencias internacionales</h2>
+<p>Algunos de esos proveedores tienen servidores fuera de Uruguay: en Brasil
+(Supabase), en la Unión Europea (PostHog) y en Estados Unidos y sus redes
+(Sentry, Vercel, jsDelivr, Apple y Google). Elegimos proveedores que ofrecen
+garantías adecuadas de protección, como cláusulas contractuales tipo o marcos de
+adecuación reconocidos.</p>
+
+<h2 id="conservacion">7. Cuánto tiempo guardamos</h2>
+<ul>
+  <li><strong>La cuenta y la copia de lo que armás:</strong> mientras tengas la cuenta.</li>
+  <li><strong>Viajes compartidos, quienes se sumaron, frases y votos:</strong> hasta que
+  borres el viaje o tu cuenta, o hasta que la persona toque «Ya no voy».</li>
+  <li><strong>Avisos de lugares y «Avisame»:</strong> mientras sirvan para decidir qué
+  corregir o sumar.</li>
+  <li><strong>Uso de la app:</strong> hasta 12 meses.</li>
+  <li><strong>Informes de fallos:</strong> unos 90 días.</li>
+  <li><strong>Registros técnicos de inicio de sesión y de servidores web:</strong> el
+  tiempo que los conservan Supabase y Vercel por seguridad.</li>
+</ul>
+<p>Al borrar la cuenta solo queda un registro de que <em>una</em> cuenta se creó o
+se borró en tal fecha y con qué método, sin correo ni nombre, que ya no apunta a
+nadie.</p>
+
+<h2 id="seguridad">8. Seguridad</h2>
+<p>Las comunicaciones viajan cifradas (HTTPS). En el servidor, cada cuenta solo
+puede leer sus propios datos, con reglas de acceso a nivel de fila. Los datos de
+sesión en el teléfono se guardan en el llavero de iOS. Ningún sistema es
+infalible: si detectamos un incidente que afecte tus datos, te lo vamos a avisar
+y lo vamos a comunicar a la autoridad cuando corresponda.</p>
+
+<h2 id="derechos">9. Tus derechos</h2>
+<p>Podés pedirnos en cualquier momento <strong>acceder</strong> a tus datos,
+<strong>rectificarlos</strong>, <strong>suprimirlos</strong>, <strong>oponerte</strong> a
+un tratamiento, <strong>limitarlo</strong> o recibirlos en un formato portable,
+escribiendo a <a href="mailto:mateofviajes@gmail.com">mateofviajes@gmail.com</a>.
+Respondemos dentro de los plazos legales (en Uruguay, 5 días hábiles para el
+acceso). Podés retirar tu consentimiento cuando quieras, sin que eso afecte lo
+hecho antes.</p>
+<p>Si no quedás conforme, podés reclamar ante la Unidad Reguladora y de Control de
+Datos Personales (URCDP) de Uruguay o ante la autoridad de protección de datos de
+tu país.</p>
+
+<h2 id="borrar">10. Borrar tu cuenta</h2>
+<p>Desde la app, en Vos → Ajustes → Tu cuenta, o desde la web, en Vos → Borrar mi
+cuenta. Se elimina de verdad tu perfil, las credenciales asociadas, la copia de lo
+que armás y los viajes que compartiste con un link (con quienes se sumaron, sus
+frases y votos), y se revoca el acceso en Apple. No queda una copia «por las
+dudas». Lo que está en tu teléfono se borra desinstalando la app. También podés
+pedirlo por correo.</p>
+
+<h2 id="no">11. Lo que no hacemos</h2>
+<ul>
+  <li>No mostramos publicidad.</li>
+  <li>No te rastreamos entre apps ni sitios, ni usamos el identificador de
+  publicidad de Apple.</li>
+  <li>No vendemos ni cedemos datos.</li>
+  <li>No cruzamos la medición de uso con tu cuenta.</li>
+  <li>No tomamos decisiones automatizadas con efectos legales sobre vos.</li>
 </ul>
 
-<h2>Compras</h2>
-<p>Hoy Viajapp no vende nada. Si en el futuro comprás algo dentro de la app, la
-compra la procesa Apple a
-través del App Store. Nosotros no vemos ni recibimos tus datos de pago en ningún
-momento.</p>
+<h2 id="menores">12. Menores</h2>
+<p>Viajapp no está dirigida a menores de 13 años y no recopilamos a sabiendas datos
+de personas de esa edad. Si sabés de un caso, escribinos y lo borramos.</p>
 
-<h2>Borrar tu cuenta y tus datos</h2>
-<p>Desde la app, en Vos → Ajustes → Tu cuenta, o desde la web, en Vos → Borrar
-mi cuenta, podés borrar tu cuenta. Eso elimina de verdad
-tu perfil, las credenciales asociadas y los viajes que compartiste desde la web
-(con la lista de quienes se sumaron) de nuestros servidores, y revoca el acceso
-en Apple. No queda una copia «por las dudas». Lo que estaba guardado sólo en tu
-teléfono se borra desinstalando la app.</p>
-<p>Si preferís pedirlo por correo, escribinos y lo hacemos nosotros.</p>
-<p>Cuánto se guarda cada cosa: los viajes compartidos y quiénes se sumaron, hasta
-que borres el viaje o tu cuenta; la lista de «Avisame» y los avisos de lugares,
-hasta que ya no sirvan para decidir qué sumar o corregir; los registros técnicos
-de inicio de sesión (IP y navegador), el tiempo que los conserva Supabase por
-seguridad.</p>
-
-<h2>Quién es responsable y tus derechos</h2>
-<p>El responsable de los datos es Mateo Fabregat, desde Uruguay. Los tratamos con
-tu consentimiento, que das al crear la cuenta, compartir un viaje, sumarte o
-anotarte. Podés pedirnos en cualquier momento acceder a tus datos,
-rectificarlos, suprimirlos u oponerte a que los usemos, escribiendo a
-<a href="mailto:mateofviajes@gmail.com">mateofviajes@gmail.com</a>. Si no te
-respondemos, podés reclamar ante la Unidad Reguladora y de Control de Datos
-Personales (URCDP) de Uruguay.</p>
-<p>Los datos viven en servidores fuera de Uruguay: Supabase (en Brasil), Vercel y
-jsDelivr (Estados Unidos y su red), y Apple o Google cuando entrás con ellos.</p>
-
-<h2>Otras condiciones</h2>
-<p>Las condiciones de uso de Viajapp están en
-<a href="terminos.html">terminos.html</a>.</p>
-
-<h2>Menores</h2>
-<p>Viajapp no está dirigida a menores de 13 años y no recopila datos de forma
-consciente de personas de esa edad.</p>
-
-<h2>Cambios</h2>
+<h2 id="cambios">13. Cambios</h2>
 <p>Si esta política cambia, actualizamos la fecha de arriba. Si el cambio es
-importante, lo avisamos dentro de la app.</p>
+importante, lo avisamos dentro de la app antes de que rija.</p>
 
-<h2>Contacto</h2>
-<p>Escribinos a
-<a href="mailto:mateofviajes@gmail.com">mateofviajes@gmail.com</a>.
-Contestamos.</p>
+<h2 id="contacto">14. Contacto</h2>
+<p><a href="mailto:mateofviajes@gmail.com">mateofviajes@gmail.com</a> · Mateo
+Fabregat · Uruguay</p>
 
-<footer>Viajapp · Mateo Fabregat · Uruguay</footer>
+<footer>Viajapp · <a href="https://getviajapp.app">getviajapp.app</a> ·
+<a href="https://getviajapp.app/terminos">Condiciones de uso</a></footer>
 
 </body>
 </html>
